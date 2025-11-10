@@ -72,7 +72,7 @@ FROM target_sql.orders
 GROUP BY 1
 ORDER BY order_year;
 ```
-Insight: Orders have grown significantly year over year, indicating increasing customer adoption and a growing market.
+**Insight**: Orders have grown significantly year over year, indicating increasing customer adoption and a growing market.
 
 ---
 ### 🌆 2. Customer Ordering Behavior by Time of Day
@@ -111,7 +111,28 @@ FROM yearly_growth;
 ```
 **Insight**: There was a steady increase in payment value from 2017 to 2018, confirming business growth.
 
-
+---
+### 🚚 4. Delivery Performance Analysis
+```
+SELECT
+    order_id,
+    EXTRACT(DAY FROM AGE(order_delivered_customer_date, order_purchase_timestamp)) AS days_to_deliver,
+    EXTRACT(DAY FROM AGE(order_delivered_customer_date, order_estimated_delivery_date)) AS diff_estimated_delivery
+FROM target_sql.orders;
+```
+**Insight**: Most deliveries occur within 8–10 days, with a few exceeding their estimated delivery dates.
+### 🌍 5. Top 5 States with Fastest Delivery
+```
+SELECT
+    c.customer_state,
+    AVG(EXTRACT(DAY FROM AGE(o.order_delivered_customer_date, o.order_purchase_timestamp))) AS avg_delivery_days
+FROM target_sql.customers c
+JOIN target_sql.orders o ON c.customer_id = o.customer_id
+GROUP BY c.customer_state
+ORDER BY avg_delivery_days ASC
+LIMIT 5;
+```
+**Insight**: Some southern states outperform in delivery speed, potentially due to better logistics and proximity to warehouses
 
 
 
