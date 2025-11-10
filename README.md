@@ -121,6 +121,7 @@ SELECT
 FROM target_sql.orders;
 ```
 **Insight**: Most deliveries occur within 8–10 days, with a few exceeding their estimated delivery dates.
+---
 ### 🌍 5. Top 5 States with Fastest Delivery
 ```
 SELECT
