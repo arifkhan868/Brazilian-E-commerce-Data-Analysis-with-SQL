@@ -136,11 +136,11 @@ LIMIT 5;
 **Insight**: Some southern states outperform in delivery speed, potentially due to better logistics and proximity to warehouses
 ---
 ## 📈 Key Insights Summary
-📌 Orders are growing consistently each year
-📌 Afternoon is the most active order time
-📌 Certain states achieve faster deliveries than expected
-📌 Payment values increased significantly from 2017 → 2018
-📌 Freight cost and delivery delays vary across regions
+- 📌 Orders are growing consistently each year
+- 📌 Afternoon is the most active order time
+- 📌 Certain states achieve faster deliveries than expected
+- 📌 Payment values increased significantly from 2017 → 2018
+- 📌 Freight cost and delivery delays vary across regions
 ---
 ## 🧰 Tools & Technologies
 - SQL (PostgreSQL)
@@ -157,8 +157,8 @@ LIMIT 5;
 ## 📎 Author
 👤 **Ariful Islam**  
 🎓 Data & BI Analyst | SQL | Excel | Power BI  
-🔗 [LinkedIn Profile](https://www.linkedin.com/in/ariful-islam)  
-📂 [More Projects on GitHub](https://github.com/yourusername)
+🔗 [LinkedIn Profile]([https://www.linkedin.com/in/ariful-islam](https://www.linkedin.com/public-profile/settings?lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_self_edit_contact-info%3BvKA5fLR%2BTx%2BCyV4%2BE34Ebg%3D%3D))  
+📂 [More Projects on GitHub]([https://github.com/yourusername](https://github.com/arifkhan868))
 
 
 
