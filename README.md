@@ -1,2 +1,74 @@
-# Brazilian-E-commerce-Data-Analysis-with-SQL
-A complete SQL project analyzing sales trends, customer behavior, payment patterns, and delivery performance using PostgreSQL on a real Brazilian E-commerce dataset.
+# 📊 E-commerce Sales Analysis using SQL  
+**A complete end-to-end SQL project analyzing sales, customers, payments, and delivery performance from a Brazilian E-commerce dataset.**
+
+---
+
+## 🧠 Overview
+This project explores a real-world dataset to uncover **sales patterns, customer behavior, payment trends, and delivery performance** using SQL.  
+All insights were generated using **PostgreSQL**, showcasing real business problem-solving with clean and optimized SQL queries.
+
+---
+
+## 🗂️ Database Schema
+
+**Schema Name:** `target_sql`
+
+| Table Name | Description |
+|-------------|--------------|
+| orders | Contains order status and timestamps |
+| order_items | Includes product, price, and freight info |
+| products | Product details including dimensions |
+| customers | Customer location data |
+| sellers | Seller information |
+| payments | Payment details and type |
+| geolocation | Geo coordinates of locations |
+| order_review | Customer review info |
+
+---
+
+## 🚀 Project Objectives
+
+✅ Analyze sales trends and seasonality  
+✅ Identify top-performing and underperforming regions  
+✅ Measure delivery speed and efficiency  
+✅ Study customer distribution and payment preferences  
+
+---
+
+## 🧩 Key Business Questions Solved
+
+| # | Question | Description |
+|--|--|--|
+| 1 | What’s the total time range of orders? | Found earliest and latest order timestamps |
+| 2 | Which states have the most customers? | Customer distribution by region |
+| 3 | Are orders increasing every year? | Year-over-year growth trend |
+| 4 | Which months have the highest sales? | Monthly order volume pattern |
+| 5 | What time of day are customers most active? | Order count by time slot |
+| 6 | How long does delivery take? | Delivery time vs estimated time |
+| 7 | Which states have the fastest and slowest deliveries? | Average delivery time by state |
+| 8 | What’s the % increase in total payment from 2017 to 2018? | Yearly growth analysis |
+| 9 | Which payment types are most used? | Payment trend by type and month |
+
+---
+
+## 🧮 SQL Concepts Used
+- ✅ **Joins (INNER / LEFT JOIN)**  
+- ✅ **Aggregate Functions** (`SUM`, `AVG`, `COUNT`)  
+- ✅ **CTE (WITH Clause)** for temporary views  
+- ✅ **Window Functions** (`LEAD`)  
+- ✅ **CASE WHEN** for conditional logic  
+- ✅ **Date Functions** (`EXTRACT`, `AGE`, `DATE_TRUNC`)  
+
+---
+
+## 🔍 Highlighted Queries & Insights
+
+### 🗓️ 1. Yearly Order Growth Trend
+```sql
+SELECT
+    EXTRACT(YEAR FROM order_purchase_timestamp) AS order_year,
+    COUNT(DISTINCT order_id) AS total_orders
+FROM target_sql.orders
+GROUP BY 1
+ORDER BY order_year;
+
