@@ -71,4 +71,5 @@ SELECT
 FROM target_sql.orders
 GROUP BY 1
 ORDER BY order_year;
-
+```
+Insight: Orders have grown significantly year over year, indicating increasing customer adoption and a growing market.
