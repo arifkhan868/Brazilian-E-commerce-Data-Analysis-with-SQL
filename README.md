@@ -73,3 +73,50 @@ GROUP BY 1
 ORDER BY order_year;
 ```
 Insight: Orders have grown significantly year over year, indicating increasing customer adoption and a growing market.
+
+---
+### 🌆 2. Customer Ordering Behavior by Time of Day
+```
+SELECT
+    CASE
+        WHEN EXTRACT(HOUR FROM order_purchase_timestamp) <= 6 THEN 'Dawn'
+        WHEN EXTRACT(HOUR FROM order_purchase_timestamp) BETWEEN 7 AND 12 THEN 'Morning'
+        WHEN EXTRACT(HOUR FROM order_purchase_timestamp) BETWEEN 13 AND 18 THEN 'Afternoon'
+        ELSE 'Night'
+    END AS time_of_day,
+    COUNT(order_id) AS total_orders
+FROM target_sql.orders
+GROUP BY 1
+ORDER BY total_orders DESC;
+```
+Insight: Most customers place orders during the afternoon, showing high engagement after work hours.
+---
+```
+### 💸 3. Year-over-Year Payment Growth (2017 vs 2018)
+WITH yearly_growth AS (
+    SELECT
+        EXTRACT(YEAR FROM s.order_purchase_timestamp) AS order_year,
+        SUM(p.payment_value) AS total_payment
+    FROM target_sql.orders s
+    JOIN target_sql.payment p ON s.order_id = p.order_id
+    WHERE EXTRACT(YEAR FROM s.order_purchase_timestamp) IN (2017, 2018)
+      AND EXTRACT(MONTH FROM s.order_purchase_timestamp) BETWEEN 1 AND 8
+    GROUP BY 1
+)
+SELECT
+    order_year,
+    ROUND(((total_payment - LEAD(total_payment) OVER (ORDER BY order_year DESC)) 
+        / LEAD(total_payment) OVER (ORDER BY order_year DESC)) * 100, 2) AS percent_increase
+FROM yearly_growth;
+```
+**Insight**: There was a steady increase in payment value from 2017 to 2018, confirming business growth.
+
+
+
+
+
+
+
+
+
+
