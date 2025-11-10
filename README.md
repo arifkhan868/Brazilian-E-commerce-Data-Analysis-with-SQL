@@ -134,10 +134,31 @@ ORDER BY avg_delivery_days ASC
 LIMIT 5;
 ```
 **Insight**: Some southern states outperform in delivery speed, potentially due to better logistics and proximity to warehouses
-
-
-
-
+---
+## 📈 Key Insights Summary
+📌 Orders are growing consistently each year
+📌 Afternoon is the most active order time
+📌 Certain states achieve faster deliveries than expected
+📌 Payment values increased significantly from 2017 → 2018
+📌 Freight cost and delivery delays vary across regions
+---
+## 🧰 Tools & Technologies
+- SQL (PostgreSQL)
+- DBMS: pgAdmin / DBeaver
+- Dataset: Brazilian E-commerce (Olist)
+---
+## 🧩 Learning Outcome
+**This project helped me:**
+- Master advanced SQL for analytics
+- Understand e-commerce KPIs
+- Build clean, business-focused queries
+- Create professional data insights for BI dashboards
+---
+## 📎 Author
+👤 **Ariful Islam**  
+🎓 Data & BI Analyst | SQL | Excel | Power BI  
+🔗 [LinkedIn Profile](https://www.linkedin.com/in/ariful-islam)  
+📂 [More Projects on GitHub](https://github.com/yourusername)
 
 
 
